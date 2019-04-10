@@ -9,8 +9,7 @@ def get_arguments():
     parser.add_argument("-s", "--steam-id",
                         dest='steam_id',
                         help="Provide your steam ID")
-    options = parser.parse_args()
-    return options
+    return parser.parse_args()
 
 
 def scrap_wishlist(steamid):
