@@ -1,8 +1,18 @@
 import urllib.request
 import json
+import argparse
 
 
 # use https://steamidfinder.com/ to get steamid from username
+def get_arguments():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-s", "--steam-id",
+                        dest='steam_id',
+                        help="Provide your steam ID")
+    options = parser.parse_args()
+    return options
+
+
 def scrap_wishlist(steamid):
     page_number = 0
     games_list = []
@@ -21,9 +31,10 @@ def scrap_wishlist(steamid):
 
         page_number += 1
 
-    return games_list
+    return sorted(games_list)
 
 
 if __name__ == '__main__':
-    for game in scrap_wishlist('76561198049351440'):
+    arguments = get_arguments()
+    for game in scrap_wishlist(arguments.steam_id):
         print(game)
