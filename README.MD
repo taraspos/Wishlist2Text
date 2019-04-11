@@ -1,5 +1,9 @@
-## steam_wishlist_scrapper
+# Wishlist2Text
 
+## Using from terminal
 * Get steam id by visiting [SteamIdFinder](https://steamidfinder.com)
 * Run script with id as parameter  
-`python steam_wishlist.py -s 77561198049351440`
+`python helpers/steam_wishlist.py -s 76561198049351440`
+
+## Using ask webserver
+* TO DO
