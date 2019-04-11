@@ -5,5 +5,5 @@
 * Run script with id as parameter  
 `python helpers/steam_wishlist.py -s 76561198049351440`
 
-## Using ask webserver
+## Using as webserver
 * TO DO
