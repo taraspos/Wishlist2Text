@@ -20,7 +20,7 @@ def scrap_wishlist(steamid):
             f'https://store.steampowered.com/wishlist/profiles/{steamid}/wishlistdata/?p={page_number}'
         ).json()
 
-        if len(page) == 0:
+        if len(page) < 2:
             break
 
         games_list.extend(value['name'] for value in page.values())
