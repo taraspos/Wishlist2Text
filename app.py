@@ -2,7 +2,7 @@ from flask import Flask, render_template, flash, session, request, redirect, url
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, SubmitField
 from wtforms.validators import DataRequired
-from steam_wishlist import scrap_wishlist
+from helpers.steam_wishlist import scrap_wishlist
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret'
