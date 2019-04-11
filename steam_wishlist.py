@@ -1,5 +1,4 @@
-import urllib.request
-import json
+import requests
 import argparse
 
 
@@ -17,16 +16,14 @@ def scrap_wishlist(steamid):
     games_list = []
 
     while True:
-        page = urllib.request.urlopen(
+        page = requests.get(
             f'https://store.steampowered.com/wishlist/profiles/{steamid}/wishlistdata/?p={page_number}'
-        ).read()
-        result = json.loads(page)
+        ).json()
 
-        if len(result) == 0:
+        if len(page) == 0:
             break
 
-        for _, value in result.items():
-            games_list.append(value['name'])
+        games_list.extend(value['name'] for value in page.values())
 
         page_number += 1
 
