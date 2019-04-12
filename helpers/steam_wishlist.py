@@ -14,10 +14,10 @@ def get_arguments():
 def scrap_wishlist(steamid):
     page_number = 0
     games_list = []
-
+    steam__wishlist_url = f'https://store.steampowered.com/wishlist/profiles'
     while True:
         page = requests.get(
-            f'https://store.steampowered.com/wishlist/profiles/{steamid}/wishlistdata/?p={page_number}'
+            f'{steam__wishlist_url}/{steamid}/wishlistdata/?p={page_number}'
         ).json()
 
         if len(page) < 2:
