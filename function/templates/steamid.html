@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="height:100vh">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <input name="steam_id" maxlength="25" size="25" type="text" class="field" id="steam_id" />
+                    <button type="button"
+                        onclick='window.location.href="/handler?steam_id=" + document.getElementById("steam_id").value;'>Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

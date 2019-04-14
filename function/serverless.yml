@@ -1,0 +1,26 @@
+service: steamwishlist
+
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - .git/**
+  include:
+    - ../helpers/**
+
+provider:
+  name: google
+  runtime: python37
+  project: <PROJECT_NAME> 
+  credentials: <PATH_TO_JSON>
+  stage: test
+
+plugins:
+  - serverless-google-cloudfunctions
+
+  
+functions:
+  scrape:
+    handler: handler
+    events:
+      - http: path

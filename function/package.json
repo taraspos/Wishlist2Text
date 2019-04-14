@@ -1,0 +1,10 @@
+{
+  "name": "steamwishlist",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless": "*",
+    "serverless-google-cloudfunctions": "^2.3.2"
+  }
+}
